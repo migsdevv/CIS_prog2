@@ -18,6 +18,7 @@ async function loadRecords() {
           <td>${record.date}</td>
           <td>
               <button class="btn btn-danger btn-sm" onclick="deleteRecord(${record.id})">Delete</button>
+              <button class="btn btn-info btn-sm" onclick="generatePDF(${record.id})">Generate PDF</button>
           </td>
       `;
     recordsTableBody.appendChild(row);
@@ -74,4 +75,8 @@ function createNewRecordPage() {
 
 function dashboardPage() {
   ipcRenderer.send('dashboard-page');
+}
+
+function generatePDF(recordId) {
+  ipcRenderer.send('generate-record-pdf', recordId);
 }
