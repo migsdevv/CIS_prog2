@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .count-box {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-size: 0.9rem;
+            padding: 6px;
+            border-radius: 0;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #003f80;
+        }
+
+        .btn-primary:hover {
+            background-color: #002a5c;
+        }
+
+        .btn-success {
+            background-color: #165623;
+        }
+
+        .btn-success:hover {
+            background-color: #0e3a19;
+        }
+
+        .btn-danger {
+            background-color: #7f161f;
+        }
+
+        .btn-danger:hover {
+            background-color: #5a1016;
+        }
+
+        .separator {
+            border-top: 1px solid #444;
+            margin: 10px 0;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h2 class="mb-3">Clinic Dashboard</h2>
+        <p class="count-box">Records: <span id="recordCount">0</span></p>
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="viewRecordsPage()">View Records</button>
+            <button class="btn btn-success" onclick="createNewRecordPage()">Create New Record</button>
+            <div class="separator"></div>
+            <button class="btn btn-danger" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <div class="footer text-center">Clinic Information System<br />
+        GROUP 2 - Computer Programming 2</div>
+
+    <script>
+        document.getElementById("recordCount").innerText = 42; // Replace with actual count
+    </script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
